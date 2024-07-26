@@ -16,7 +16,7 @@ const UserProfile = () => {
     // const [user, setUser] = useState(null);
     
     return (
-        <div>
+        <div className='proyectos'>
             <h1>Perfil de Usuario</h1>
             <p>Nombre de Usuario: {user ? user.displayName : 'No hay usuario logueado'}</p>
             {user &&(

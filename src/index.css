@@ -56,6 +56,22 @@ input{
   padding: 15px 20px;
 }
 
+/* Inicio Login */
+
+.login{
+  margin-top: 15px;
+  margin-bottom: 30px;
+  padding: 15px 20px;
+}
+
+/* inicio Proyectos */
+
+.proyectos{
+  margin-top: 15px;
+  margin-bottom: 30px;
+  padding: 25px 25px;
+}
+
 /* inicio del Footer */
 .footer {
   background-color: #1a1a2e;
