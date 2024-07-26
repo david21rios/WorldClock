@@ -122,3 +122,98 @@ input{
   margin-bottom: 10px;
   margin-top: 20px;
 }
+
+/* Media Queries para hacer el pie de página responsive */
+@media (max-width: 768px) {
+  .footer__caption {
+    grid-template-columns: 1fr;
+    gap: 10px;
+  }
+
+  .title__footer {
+    font-size: 20px;
+    margin-top: 30px;
+    margin-bottom: 20px;
+  }
+
+  .footer__text {
+    font-size: 14px;
+    padding: 0 10px 20px 0;
+  }
+
+  .socialmedia {
+    justify-content: center;
+  }
+
+  .socialmedia a {
+    font-size: 20px;
+  }
+
+  .redes {
+    font-size: 18px;
+    margin-left: 0;
+    margin-top: 20px;
+    margin-bottom: 20px;
+    text-align: center;
+  }
+
+  .number, .mail {
+    font-size: 18px;
+    margin-left: 0;
+    text-align: center;
+  }
+
+  .newsletter__input {
+    max-width: 100%;
+    padding: 10px;
+  }
+
+  .newsletter__submit {
+    font-size: 14px;
+    padding: 15px 30px;
+  }
+
+  .copy {
+    text-align: center;
+  }
+}
+
+@media (max-width: 480px) {
+  .footer__caption {
+    gap: 5px;
+  }
+
+  .title__footer {
+    font-size: 18px;
+    margin-top: 20px;
+    margin-bottom: 15px;
+  }
+
+  .footer__text {
+    font-size: 12px;
+    padding: 0 5px 15px 0;
+  }
+
+  .socialmedia a {
+    font-size: 18px;
+  }
+
+  .redes {
+    font-size: 18px;
+    margin-top: 15px;
+    margin-bottom: 15px;
+  }
+
+  .number, .mail {
+    font-size: 12px;
+  }
+
+  .newsletter__input {
+    padding: 8px;
+  }
+
+  .newsletter__submit {
+    font-size: 10px;
+    padding: 12px 20px;
+  }
+}
