@@ -13,7 +13,9 @@ const AuthProvider = ({ children }) => {
     );
 };
 
-//Validacion de tupos para las props
+
+
+//Validacion de tipos para las props
 AuthProvider.propTypes = {
     children: PropTypes.node.isRequired,
     // children debe ser un nodo valido de react y es requerido
