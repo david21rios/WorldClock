@@ -1,28 +1,42 @@
 import { useState } from 'react';
-import { db } from '../firebase.js';
-import { collection, addDoc} from 'firebase/firestore';
+import {auth} from '../firebase';
+import {createUserWithEmailAndPassword} from 'firebase/auth';
 
 const Register = () => {
-    // eslint-disable-next-line react-hooks/rules-of-hooks
     const [email, setEmail] = useState('');
-    // eslint-disable-next-line react-hooks/rules-of-hooks
     const [password, setPassword] = useState('');
+    const [error, setError] = useState(null);
 
-    const handleRegister = async (e) =>{
-        e.preventDefault();
-        await addDoc(collection(db, 'users'),{
-            email,
-            password,
-        });
+    const handleRegister = async () =>{
+
+        try{
+            await createUserWithEmailAndPassword(auth, email, password);
+        } catch (error) {
+            setError(error.message);
+        }
+
+        // e.preventDefault();
+        // await addDoc(collection(db, 'users'),{
+        //     email,
+        //     password,
+        // });
         alert('User registered successfully!');
     };
 
     return(
-        <form onSubmit={handleRegister}>
-            <input type="email" value={email} onChange={(e) => setEmail(e.target.value)} placeholder="Email" required/>
-            <input type="password" value={password} onChange={(e) => setPassword(e.target.value)} placeholder="Password" required/>
-            <button type="submit">Register</button>
-        </form>
+        <div>
+        <h1>Register</h1>
+            <form>
+                <label>Email:</label>
+                <input type="email" value={email} onChange={(e) => setEmail(e.target.value)} placeholder="Email" required/>
+                <br/>
+                <label>Password:</label>
+                <input type="password" value={password} onChange={(e) => setPassword(e.target.value)} placeholder="Password" required/>
+                <br/>
+                <button onClick={handleRegister}>Register</button>
+                {error && <p style={{color: 'red'}}>{error}</p>}
+            </form>
+        </div>
     );
 
 };

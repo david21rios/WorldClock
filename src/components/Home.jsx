@@ -31,9 +31,9 @@ const Home = () => {
     };
 
     return(
-        <div>
+        <div className='home'>
             <h1>Country Information</h1>
-            <select onChange={handleCountryChange}>
+            <select className='button' onChange={handleCountryChange}>
                 <option value=" ">Select a country</option>
                 {countries.map((c) =>(
                     <option key={c} value={c}>{c}</option>

@@ -1,6 +1,20 @@
-import { }from "react-router-dom";
+// import { useState, useEffect } from "react";
+import { Link }from "react-router-dom";
+import {useContext }from 'react';
+import { AuthContext }from './authContext';
 
 const Navbar = () => {
+    const { user } = useContext(AuthContext)
+
+    // useEffect(() => {
+    //     const user = auth.currentUser;
+    //     if (user) {
+    //         setUser(user);
+    //     }
+    // }, [auth.currentUser]);
+
+    // const [user, setUser] = useState(null);
+
     return (
         <nav className="navbar navbar-expand-lg navbar-light bg-light">
             <div className="container-fluid">
@@ -26,18 +40,22 @@ const Navbar = () => {
                     </a>
                     <ul className="dropdown-menu" aria-labelledby="navbarDropdown">
                         <li><a className="dropdown-item" href="/login">Login</a></li>
-                        {/* <li><hr className="dropdown-divider"/></li> */}
                         <li><a className="dropdown-item" href="/register">Register</a></li>
                     </ul>
                     </li>
-                    {/* <li className="nav-item">
-                    <a className="nav-link disabled" href="#" tabIndex="-1" aria-disabled="true">Disabled</a>
-                    </li> */}
+                    {user && (
+                        <li className="nav-item">
+                            <Link className="nav-link" to="/user-profile">
+                                proyectos
+                            </Link>
+                        </li>
+                    )}
                 </ul>
                 <form className="d-flex">
                     <input className="form-control me-2" type="search" placeholder="Search" aria-label="Search"></input>
                     <button className="btn btn-outline-success" type="submit">Search</button>
                 </form>
+                <p>{user ? user.displayName : 'usuario'}</p>
                 </div>
             </div>
         </nav>

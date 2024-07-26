@@ -2,7 +2,7 @@
 
 const Contact = () => {
     return (
-        <div>
+        <div className="contact">
             <p>Bienvenido al componente Contact</p>
         </div>
     );

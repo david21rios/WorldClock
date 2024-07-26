@@ -38,6 +38,24 @@ input{
   padding: 0.5rem;
 }
 
+/* inicio del home */
+.home{
+  padding: 20px 45px;
+}
+
+.button{
+  margin-top: 15px;
+  margin-bottom: 20px;
+}
+
+/* inicio del About */
+
+.about{
+  margin-top: 15px;
+  margin-bottom: 20px;
+  padding: 15px 20px;
+}
+
 /* inicio del Footer */
 .footer {
   background-color: #1a1a2e;
