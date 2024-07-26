@@ -6,6 +6,7 @@ import Contact from './components/Contact';
 import Login from './components/Login';
 import Register from './components/Register';  
 import Pag404 from './components/Pag404';
+import Footer from './components/Footer';
 
 const App = () => {
   return(
@@ -19,6 +20,7 @@ const App = () => {
         <Route path="/register" element={<Register />} />
         <Route path="*" element={<Pag404 />} />
       </Routes>
+      <Footer></Footer>
     </Router>
   );
 };

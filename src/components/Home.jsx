@@ -50,7 +50,11 @@ const Home = () => {
                     <img src={countryData.coatOfArms} alt="Coat of Arms"></img>
                     <p>Anthem: {countryData.anthem}</p>
                 </div>
+                
             )}
+            <div>
+                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Omnis recusandae ad molestiae. Illum quibusdam nulla vero quis fugiat! Magni saepe enim ducimus vero aperiam velit nesciunt voluptatum maiores doloremque nemo, deleniti corrupti magnam cum itaque ut cupiditate dicta quos excepturi sequi atque accusantium, vel dolor nam. Ut quia dolorum beatae?</p>
+            </div>
         </div>
     );
 };
