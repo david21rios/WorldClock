@@ -1,6 +1,6 @@
 import { useState } from 'react';
 import {auth} from '../firebase';
-import {singInWithEmailAndPassword} from '/firebase/auth';
+import {signInWithEmailAndPassword} from 'firebase/auth';
 // import { db } from '../firebase';
 // import { collection, getDocs, query, where} from 'firebase/firestore';
 
@@ -13,7 +13,7 @@ const Login = () => {
     const handleLogin = async () =>{
 
         try{
-            await singInWithEmailAndPassword(auth, email, password);
+            await signInWithEmailAndPassword(auth, email, password);
         } catch (error) {
             setError(error.message);
         }
