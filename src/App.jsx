@@ -7,7 +7,7 @@ import Login from './components/Login';
 import Register from './components/Register';  
 import Pag404 from './components/Pag404';
 import Footer from './components/Footer';
-import { AuthProvider } from './components/authContext';
+import { AuthProvider } from './components/AuthContext';
 import UserProfile from './components/UserProfile';
 
 const App = () => {

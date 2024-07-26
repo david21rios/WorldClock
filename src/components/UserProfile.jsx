@@ -1,6 +1,6 @@
 // import {useState, useEffect} from 'react';
 import {useContext }from 'react';
-import { AuthContext }from './authContext';
+import { AuthContext }from './AuthContext';
 // import {auth} from './firebase';
 
 const UserProfile = () => {

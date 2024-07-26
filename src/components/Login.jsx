@@ -1,34 +1,30 @@
 import { useState } from 'react';
 import {auth} from '../firebase';
 import {signInWithEmailAndPassword} from 'firebase/auth';
-// import { db } from '../firebase';
-// import { collection, getDocs, query, where} from 'firebase/firestore';
+import { useContext } from 'react';
+import { AuthContext } from './AuthContext';
+import { useNavigate } from 'react-router-dom'; // Importa useNavigate
 
 const Login = () => {
-
+    const { setUser } = useContext(AuthContext);
     const [email, setEmail] = useState('');
     const [password, setPassword] = useState('');
     const [error, setError] = useState(null);
+    const navigate = useNavigate(); // Crea una instancia de navigate
 
-    const handleLogin = async () =>{
-
-        try{
-            await signInWithEmailAndPassword(auth, email, password);
+    const handleLogin = async (e) => {
+        e.preventDefault(); // Evita el comportamiento predeterminado del formulario
+        try {
+            const userCredential = await signInWithEmailAndPassword(auth, email, password);
+            const user = userCredential.user;
+            setUser(user); // Actualiza el estado del usuario en el contexto
+            // Redirige al usuario a la página de inicio
+            navigate('/'); // Cambia '/' a la ruta que desees redirigir
+            console.log('Inicio de sesión exitoso');
         } catch (error) {
+            console.error('Error al iniciar sesión:', error);
             setError(error.message);
         }
-
-        // e.preventDefault();
-        // const usersRef = collection(db, 'users');
-        // const q = query(usersRef, where('email', '==', email));
-        // const querySnapshot = await getDocs(q);
-        // querySnapshot.forEach((doc) => {
-        //     if (doc.data().password === password) {
-        //         alert('Login successful');
-        //     } else {
-        //         alert('Invalid credentials');
-        //     }
-        // });   
     };
     
     return(

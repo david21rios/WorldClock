@@ -1,19 +1,10 @@
 // import { useState, useEffect } from "react";
 import { Link }from "react-router-dom";
 import {useContext }from 'react';
-import { AuthContext }from './authContext';
+import { AuthContext }from './AuthContext';
 
 const Navbar = () => {
     const { user } = useContext(AuthContext)
-
-    // useEffect(() => {
-    //     const user = auth.currentUser;
-    //     if (user) {
-    //         setUser(user);
-    //     }
-    // }, [auth.currentUser]);
-
-    // const [user, setUser] = useState(null);
 
     return (
         <nav className="navbar navbar-expand-lg navbar-light bg-light">
@@ -55,7 +46,7 @@ const Navbar = () => {
                     <input className="form-control me-2" type="search" placeholder="Search" aria-label="Search"></input>
                     <button className="btn btn-outline-success" type="submit">Search</button>
                 </form>
-                <p>{user ? user.displayName : 'usuario'}</p>
+                <p>{user ? user.email : 'Usuario'}</p>
                 </div>
             </div>
         </nav>
