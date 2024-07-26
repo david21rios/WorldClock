@@ -1,4 +1,5 @@
 import { createContext, useState } from 'react';
+import PropTypes from 'prop-types';
 
 const AuthContext = createContext();
 
@@ -12,9 +13,11 @@ const AuthProvider = ({ children }) => {
     );
 };
 
+//Validacion de tupos para las props
 AuthProvider.propTypes = {
-    // eslint-disable-next-line no-undef
-    children: PropTypes.string.isRequired
+    children: PropTypes.node.isRequired,
+    // children debe ser un nodo valido de react y es requerido
 }
+
 
 export { AuthContext, AuthProvider };
