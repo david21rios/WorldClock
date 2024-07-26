@@ -1,6 +1,6 @@
 import { useState } from 'react';
 import {auth} from '../firebase';
-import {singInWithEmailAndPassword} from 'firebase/auth';
+import {singInWithEmailAndPassword} from '/firebase/auth';
 // import { db } from '../firebase';
 // import { collection, getDocs, query, where} from 'firebase/firestore';
 
