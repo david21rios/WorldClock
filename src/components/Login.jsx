@@ -38,7 +38,7 @@ const Login = () => {
                 <label>Email:</label>
                 <input type="email" value={email} onChange={(e) => setEmail(e.target.value)} placeholder="Email" required/>
                 <br/>
-                <lable>Password:</lable>
+                <label>Password:</label>
                 <input type="password" value={password} onChange={(e) => setPassword(e.target.value)} placeholder="Password" required/>
                 <br/>
                 <button onClick={handleLogin}>Login</button>
